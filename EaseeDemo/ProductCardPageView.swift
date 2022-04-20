@@ -10,29 +10,42 @@ import SwiftUI
 struct ProductCardPageView: View {
     @State var location: ChargeLocation
     @State var currentRobot = 0
+
     var body: some View {
-        ScrollView(.vertical) {
-            VStack {
-                headerView
-                
-                TabView(selection: $currentRobot) {
-                    ForEach(location.robots) { robot in
-                        ProductCardView(robot: robot)
-                            .tag(location.robots.firstIndex(where: { $0.id == robot.id }) ?? 0)
-                    }
-                }
-                .tabViewStyle(.page(indexDisplayMode: .always))
-                .frame(height: 520)
-                .background(.red)
-                
-                optionButtons
-                    .padding(.horizontal)
-            }
+        #if os(watchOS)
+        pageView
+        
+        #else
+        VStack(spacing: 8) {
+            headerView
+            
+            pageView
+            .frame(height: 500)
+            
+            optionButtons
+            Spacer()
+            
         }
-        .background(Color(uiColor: .systemGroupedBackground))
-        .cornerRadius(32)
+        .background(
+            RoundedRectangle(cornerRadius: 32)
+                .edgesIgnoringSafeArea(.bottom)
+                .foregroundColor(Color(uiColor: .systemGroupedBackground))
+        )
+        #endif
+        
     }
     
+    var pageView: some View{
+        TabView(selection: $currentRobot) {
+            ForEach(location.robots) { robot in
+                ProductCardView(robot: robot)
+                    .tag(location.robots.firstIndex(where: { $0.id == robot.id }) ?? 0)
+            }
+        }
+        .tabViewStyle(.page(indexDisplayMode: .always))
+    }
+    
+    #if os(iOS)
     var headerView: some View {
         HStack {
             HStack{
@@ -56,25 +69,34 @@ struct ProductCardPageView: View {
     }
     
     @ViewBuilder var optionButtons: some View {
+        Group{
         NavigationLink{
             Text("Power options")
         } label: {
             NavButton(title: "Power options")
         }
-        .padding(.top)
         
         NavigationLink{
             Text("Charger settings")
         } label: {
             NavButton(title: "Charger settings")
         }
+        }
+        .font(.subheadline)
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
+        .padding(.horizontal)
     }
+    #endif
 }
 
 struct ProductCardPageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
         ProductCardPageView(location: .preview)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Home")
+                
         }
+        //.preferredColorScheme(.dark)
     }
 }

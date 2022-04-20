@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductCardView: View {
     @State var robot: ChargeRobot
+    
     var body: some View {
             VStack(spacing: 8) {
                 headerView
@@ -16,7 +17,7 @@ struct ProductCardView: View {
                 Image(robot.color)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 220)
+                    .frame(height: 200)
                     .padding()
                 
                 HStack {
@@ -41,7 +42,7 @@ struct ProductCardView: View {
                 Spacer()
             }
             .padding()
-            .padding(.horizontal, 8)
+            //.padding(.horizontal, 8)
     }
     
     // MARK: - Subviews
@@ -82,9 +83,7 @@ struct ProductCardView: View {
 // MARK: - Preview
 struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
             ProductCardView(robot: ChargeRobot.preview)
                 //.preferredColorScheme(.dark)
-        }
     }
 }

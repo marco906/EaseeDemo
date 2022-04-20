@@ -8,55 +8,80 @@
 import SwiftUI
 
 struct LocationView: View {
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @EnvironmentObject var model: Model
-
+    @State var location: ChargeLocation
+    
     var body: some View {
+        #if os(watchOS)
+        // watch
+        ProductCardPageView(location: location)
+            .navigationTitle(location.name)
+        #else
         Group {
             if horizontalSizeClass == .compact {
-                VStack {
-                    ProductCardView(robot: .preview)
-                        .edgesIgnoringSafeArea(.bottom)
+                // iphone and ipad compact
+                ZStack {
+                    LocationDetailView()
+                    ProductCardPageView(location: location)
+                        .offset(x: 0, y: offset)
                 }
                 .background(Color(uiColor: .secondarySystemGroupedBackground))
-            } else {
-                HStack {
-                    VStack{
-                        Spacer()
-                        Text("Location Info")
-                            .padding()
-                        Spacer()
+                .navigationBarTitleDisplayMode(.inline)
+                // toolbar
+                .toolbar{
+                    ToolbarItem(placement: .primaryAction) {
+                        productCardButton
                     }
+                }
+            } else {
+                // ipad landscape, macOS
+                HStack {
+                    LocationDetailView()
                     Spacer()
-                    ProductCardView(robot: .preview)
-                        .frame(maxWidth: 500)
+                    ProductCardPageView(location: location)
+                        .padding(.vertical)
+                        .padding(.trailing)
+                        .frame(minWidth: 400)
                 }
-            }
-        }
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button{
-                    
-                } label: {
-                    Image(systemName: "chevron.down")
-                }
+                
             }
         }
         .foregroundColor(.primary)
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
+        .navigationTitle(location.name)
+        #endif
+        
     }
+    
+    // iOS additional Components
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State var offset = CGFloat.zero
+    var maxOffset: CGFloat = 380
+    var maxRotation: CGFloat = 180
+    
+    var productCardButton: some View {
+        Button {
+            withAnimation(.spring()){
+            offset = offset == 0 ? maxOffset : 0
+            }
+        } label: {
+            Image(systemName: "chevron.down")
+                .rotationEffect(Angle(degrees: (offset / maxOffset * maxRotation)))
+        }
+    }
+    #endif
 }
 
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        LocationView()
+            LocationView(location: .preview)
         }
         .environmentObject(Model())
         .preferredColorScheme(.dark)
         
         NavigationView {
-        LocationView()
+        LocationView(location: .preview)
         }
         .environmentObject(Model())
         .preferredColorScheme(.light)

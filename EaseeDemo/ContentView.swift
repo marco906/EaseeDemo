@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selection: String? = "home"
+    @EnvironmentObject var model: Model
+    @State var selection: String? = "Home"
     var body: some View {
         NavigationView {
             List {
@@ -30,24 +31,23 @@ struct ContentView: View {
     @ViewBuilder var listContent: some View {
         Group{
             Section("Locations") {
-                NavigationLink(tag: "home", selection: $selection){
-                    LocationView()
-                        .navigationTitle("Home")
-                } label: {
-                    Label("Home", systemImage: "bolt.car")
-                }
-                NavigationLink(tag: "cabin", selection: $selection){
-                    LocationView()
-                        .navigationTitle("Cabin")
-                } label: {
-                    Label("Cabin", systemImage: "bolt.car")
+                ForEach(model.locations) { location in
+                    NavigationLink(tag: location.name, selection: $selection){
+                        LocationView(location: location)
+                    } label: {
+                        Label(location.name, systemImage: "bolt.car")
+                    }
                 }
             }
             
             Section("My easee") {
                 keyLink
                 TestLink(title: "Settings", image: "gear")
-                TestLink(title: "Notifications", image: "bell.badge")
+                NavigationLink{
+                    NotificationsView()
+                } label: {
+                    Label("Notifications", systemImage: "bell.badge")
+                }
             }
             #if os(watchOS)
             profileHeader
