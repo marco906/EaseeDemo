@@ -116,6 +116,7 @@
 				A92965032808A0B800556CED /* EaseeDemo */,
 				A948BA30280F3AB000FCB7B6 /* WatchEaseeDemo */,
 				A948BA3B280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension */,
+				A948BA73280FF28200FCB7B6 /* Unused */,
 				A92965022808A0B800556CED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,10 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				A948BA68280F45ED00FCB7B6 /* LocationView.swift */,
-				A948BA46280F3AB100FCB7B6 /* Assets.xcassets */,
-				A948BA4B280F3AB100FCB7B6 /* Info.plist */,
-				A948BA4C280F3AB100FCB7B6 /* PushNotificationPayload.apns */,
-				A948BA48280F3AB100FCB7B6 /* Preview Content */,
 			);
 			path = "WatchEaseeDemo WatchKit Extension";
 			sourceTree = "<group>";
@@ -180,6 +177,17 @@
 				A948BA49280F3AB100FCB7B6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A948BA73280FF28200FCB7B6 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				A948BA46280F3AB100FCB7B6 /* Assets.xcassets */,
+				A948BA4B280F3AB100FCB7B6 /* Info.plist */,
+				A948BA4C280F3AB100FCB7B6 /* PushNotificationPayload.apns */,
+				A948BA48280F3AB100FCB7B6 /* Preview Content */,
+			);
+			path = Unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
