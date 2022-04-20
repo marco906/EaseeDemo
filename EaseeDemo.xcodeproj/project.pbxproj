@@ -15,7 +15,7 @@
 		A948BA38280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A948BA37280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A948BA47280F3AB100FCB7B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A948BA46280F3AB100FCB7B6 /* Assets.xcassets */; };
 		A948BA4A280F3AB100FCB7B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A948BA49280F3AB100FCB7B6 /* Preview Assets.xcassets */; };
-		A948BA4F280F3AB100FCB7B6 /* WatchEaseeDemo.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A948BA2F280F3AB000FCB7B6 /* WatchEaseeDemo.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A948BA4F280F3AB100FCB7B6 /* WatchEaseeDemo.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A948BA2F280F3AB000FCB7B6 /* WatchEaseeDemo.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A948BA5D280F3E9C00FCB7B6 /* EaseeDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92965042808A0B800556CED /* EaseeDemoApp.swift */; };
 		A948BA67280F459900FCB7B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9687F4F280F1E1100E3A3D4 /* ContentView.swift */; };
 		A948BA6B280F521900FCB7B6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948BA6A280F521900FCB7B6 /* Model.swift */; };
@@ -97,6 +97,7 @@
 		A9687F4F280F1E1100E3A3D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A990184528101F2B00158BF0 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		A9901849281026A000158BF0 /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		A990184C28102BC800158BF0 /* EaseeDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EaseeDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +141,7 @@
 		A92965032808A0B800556CED /* EaseeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				A990184C28102BC800158BF0 /* EaseeDemo.entitlements */,
 				A92965042808A0B800556CED /* EaseeDemoApp.swift */,
 				A948BA6A280F521900FCB7B6 /* Model.swift */,
 				A9687F4F280F1E1100E3A3D4 /* ContentView.swift */,
@@ -361,6 +363,7 @@
 		};
 		A948BA4E280F3AB100FCB7B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = A948BA2E280F3AB000FCB7B6 /* WatchEaseeDemo */;
 			targetProxy = A948BA4D280F3AB100FCB7B6 /* PBXContainerItemProxy */;
 		};
@@ -486,6 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EaseeDemo/EaseeDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EaseeDemo/Preview Content\"";
@@ -504,6 +508,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.EaseeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -515,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EaseeDemo/EaseeDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EaseeDemo/Preview Content\"";
@@ -533,6 +539,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.EaseeDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
