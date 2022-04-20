@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct EaseeDemoApp: App {
+    @StateObject var model = Model.preview
     var body: some Scene {
         WindowGroup {
-            MainView()
+            ContentView()
+                .environmentObject(model)
         }
     }
 }

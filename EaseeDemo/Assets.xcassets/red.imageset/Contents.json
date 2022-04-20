@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Easee-home-roed.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

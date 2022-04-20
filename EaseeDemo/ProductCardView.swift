@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ProductCardView: View {
+    @State var robot: ChargeRobot
     var body: some View {
             VStack(spacing: 8) {
                 headerView
                 
-                Image("FrontWhite")
+                Image(robot.color)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 220)
@@ -37,34 +38,20 @@ struct ProductCardView: View {
                 .padding(.vertical)
                 .overlay(playButton)
                 
-                optionButtons
-                
                 Spacer()
             }
             .padding()
             .padding(.horizontal, 8)
-            .background(Color(uiColor: .systemGroupedBackground))
-            .cornerRadius(32)
     }
     
     // MARK: - Subviews
     var headerView: some View {
-        VStack(spacing: 8) {
-        HStack {
-            Image(systemName: "wifi")
-            Text("WiFi")
-                .font(.subheadline)
-            Spacer()
-            Image(systemName: "info.circle")
-        }
-        .font(.title3)
-        .padding(.vertical, 8)
-        
-        Text("Paused")
+        VStack(spacing: 8) {        
+            Text(robot.isCharging ? "Charging" : "Paused")
             .font(.title2)
             .fontWeight(.semibold)
         
-        Text("CARPORT")
+            Text(robot.name.uppercased())
             .font(.subheadline)
             .fontWeight(.medium)
             .foregroundStyle(.tertiary)
@@ -72,11 +59,16 @@ struct ProductCardView: View {
     }
     
     var playButton: some View {
-        Image(systemName: "play.fill")
+        Button{
+            robot.isCharging.toggle()
+        } label : {
+        Image(systemName: robot.isCharging ? "pause" : "play.fill")
             .font(.title)
             .foregroundStyle(.background)
             .padding()
             .background(Circle().frame(width: 70, height: 70))
+        }
+        .buttonStyle(.plain)
     }
     
     var capsuleBackground: some View {
@@ -84,80 +76,15 @@ struct ProductCardView: View {
             .foregroundStyle(Color(uiColor: .secondarySystemGroupedBackground))
     }
     
-    @ViewBuilder var optionButtons: some View {
-        NavigationLink{
-            Text("Power options")
-        } label: {
-            NavButton(title: "Power options")
-        }
-        .padding(.top)
-        
-        NavigationLink{
-            Text("Charger settings")
-        } label: {
-            NavButton(title: "Charger settings")
-        }
-    }
+
 }
 
 // MARK: - Preview
 struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        ProductCardView()
+            ProductCardView(robot: ChargeRobot.preview)
+                //.preferredColorScheme(.dark)
         }
-    }
-}
-
-struct FeatureView: View {
-    var imageName: String
-    var title: String
-    var subTitle: String
-    var leading: Bool
-    var body: some View {
-        HStack(spacing: 4) {
-            if leading {
-                Image(systemName: imageName)
-                    .frame(width: 25)
-                VStack(alignment: .leading) {
-                    Text(title)
-                        .font(.headline)
-                    if subTitle.isEmpty == false {
-                    Text(subTitle)
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                    }
-                }
-                .padding(8)
-            } else {
-                VStack(alignment: .trailing) {
-                    Text(title)
-                        .font(.headline)
-                    if subTitle.isEmpty == false {
-                    Text(subTitle)
-                        .font(.footnote)
-                        .foregroundStyle(.secondary)
-                    }
-                }
-                .padding(8)
-                Image(systemName: imageName)
-                    .frame(width: 25)
-            }
-        }
-    }
-}
-
-struct NavButton: View {
-    var title: String
-    var body: some View {
-        HStack {
-            Text(title)
-            Spacer()
-            Image(systemName: "chevron.forward")
-                .foregroundColor(.secondary)
-        }
-        .foregroundColor(.primary)
-        .padding()
-        .background(Color(uiColor: .secondarySystemGroupedBackground))
     }
 }

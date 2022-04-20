@@ -8,25 +8,99 @@
 
 /* Begin PBXBuildFile section */
 		A92965052808A0B800556CED /* EaseeDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92965042808A0B800556CED /* EaseeDemoApp.swift */; };
-		A92965072808A0B800556CED /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92965062808A0B800556CED /* DashboardView.swift */; };
+		A92965072808A0B800556CED /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92965062808A0B800556CED /* LocationView.swift */; };
 		A92965092808A0B900556CED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92965082808A0B900556CED /* Assets.xcassets */; };
 		A929650C2808A0B900556CED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A929650B2808A0B900556CED /* Preview Assets.xcassets */; };
+		A948BA32280F3AB100FCB7B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A948BA31280F3AB100FCB7B6 /* Assets.xcassets */; };
+		A948BA38280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A948BA37280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A948BA47280F3AB100FCB7B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A948BA46280F3AB100FCB7B6 /* Assets.xcassets */; };
+		A948BA4A280F3AB100FCB7B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A948BA49280F3AB100FCB7B6 /* Preview Assets.xcassets */; };
+		A948BA4F280F3AB100FCB7B6 /* WatchEaseeDemo.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A948BA2F280F3AB000FCB7B6 /* WatchEaseeDemo.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A948BA5D280F3E9C00FCB7B6 /* EaseeDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92965042808A0B800556CED /* EaseeDemoApp.swift */; };
+		A948BA67280F459900FCB7B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9687F4F280F1E1100E3A3D4 /* ContentView.swift */; };
+		A948BA69280F45ED00FCB7B6 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948BA68280F45ED00FCB7B6 /* LocationView.swift */; };
+		A948BA6B280F521900FCB7B6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948BA6A280F521900FCB7B6 /* Model.swift */; };
+		A948BA6C280F587000FCB7B6 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948BA6A280F521900FCB7B6 /* Model.swift */; };
+		A948BA6E280F5A5600FCB7B6 /* SupportingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948BA6D280F5A5600FCB7B6 /* SupportingViews.swift */; };
+		A948BA6F280F5A5A00FCB7B6 /* SupportingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948BA6D280F5A5600FCB7B6 /* SupportingViews.swift */; };
+		A948BA70280F5AD300FCB7B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92965082808A0B900556CED /* Assets.xcassets */; };
+		A948BA72280FE9E000FCB7B6 /* ProductCardPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A948BA71280FE9E000FCB7B6 /* ProductCardPageView.swift */; };
 		A9687F4E280F083F00E3A3D4 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9687F4D280F083F00E3A3D4 /* ProductCardView.swift */; };
-		A9687F50280F1E1100E3A3D4 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9687F4F280F1E1100E3A3D4 /* MainView.swift */; };
+		A9687F50280F1E1100E3A3D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9687F4F280F1E1100E3A3D4 /* ContentView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A948BA39280F3AB100FCB7B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A92964F92808A0B800556CED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A948BA36280F3AB100FCB7B6;
+			remoteInfo = "WatchEaseeDemo WatchKit Extension";
+		};
+		A948BA4D280F3AB100FCB7B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A92964F92808A0B800556CED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A948BA2E280F3AB000FCB7B6;
+			remoteInfo = WatchEaseeDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A948BA50280F3AB100FCB7B6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A948BA4F280F3AB100FCB7B6 /* WatchEaseeDemo.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A948BA53280F3AB100FCB7B6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A948BA38280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A92965012808A0B800556CED /* EaseeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EaseeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92965042808A0B800556CED /* EaseeDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EaseeDemoApp.swift; sourceTree = "<group>"; };
-		A92965062808A0B800556CED /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		A92965062808A0B800556CED /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		A92965082808A0B900556CED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A929650B2808A0B900556CED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A948BA2F280F3AB000FCB7B6 /* WatchEaseeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchEaseeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A948BA31280F3AB100FCB7B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A948BA37280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchEaseeDemo WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A948BA46280F3AB100FCB7B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A948BA49280F3AB100FCB7B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A948BA4B280F3AB100FCB7B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A948BA4C280F3AB100FCB7B6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A948BA68280F45ED00FCB7B6 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		A948BA6A280F521900FCB7B6 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A948BA6D280F5A5600FCB7B6 /* SupportingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportingViews.swift; sourceTree = "<group>"; };
+		A948BA71280FE9E000FCB7B6 /* ProductCardPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardPageView.swift; sourceTree = "<group>"; };
 		A9687F4D280F083F00E3A3D4 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
-		A9687F4F280F1E1100E3A3D4 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		A9687F4F280F1E1100E3A3D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A92964FE2808A0B800556CED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A948BA34280F3AB100FCB7B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				A92965032808A0B800556CED /* EaseeDemo */,
+				A948BA30280F3AB000FCB7B6 /* WatchEaseeDemo */,
+				A948BA3B280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension */,
 				A92965022808A0B800556CED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				A92965012808A0B800556CED /* EaseeDemo.app */,
+				A948BA2F280F3AB000FCB7B6 /* WatchEaseeDemo.app */,
+				A948BA37280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,9 +134,12 @@
 			isa = PBXGroup;
 			children = (
 				A92965042808A0B800556CED /* EaseeDemoApp.swift */,
-				A92965062808A0B800556CED /* DashboardView.swift */,
+				A948BA6A280F521900FCB7B6 /* Model.swift */,
+				A9687F4F280F1E1100E3A3D4 /* ContentView.swift */,
+				A92965062808A0B800556CED /* LocationView.swift */,
 				A9687F4D280F083F00E3A3D4 /* ProductCardView.swift */,
-				A9687F4F280F1E1100E3A3D4 /* MainView.swift */,
+				A948BA71280FE9E000FCB7B6 /* ProductCardPageView.swift */,
+				A948BA6D280F5A5600FCB7B6 /* SupportingViews.swift */,
 				A92965082808A0B900556CED /* Assets.xcassets */,
 				A929650A2808A0B900556CED /* Preview Content */,
 			);
@@ -73,6 +154,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A948BA30280F3AB000FCB7B6 /* WatchEaseeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A948BA31280F3AB100FCB7B6 /* Assets.xcassets */,
+			);
+			path = WatchEaseeDemo;
+			sourceTree = "<group>";
+		};
+		A948BA3B280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A948BA68280F45ED00FCB7B6 /* LocationView.swift */,
+				A948BA46280F3AB100FCB7B6 /* Assets.xcassets */,
+				A948BA4B280F3AB100FCB7B6 /* Info.plist */,
+				A948BA4C280F3AB100FCB7B6 /* PushNotificationPayload.apns */,
+				A948BA48280F3AB100FCB7B6 /* Preview Content */,
+			);
+			path = "WatchEaseeDemo WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A948BA48280F3AB100FCB7B6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A948BA49280F3AB100FCB7B6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,15 +192,51 @@
 				A92964FD2808A0B800556CED /* Sources */,
 				A92964FE2808A0B800556CED /* Frameworks */,
 				A92964FF2808A0B800556CED /* Resources */,
+				A948BA50280F3AB100FCB7B6 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A948BA4E280F3AB100FCB7B6 /* PBXTargetDependency */,
 			);
 			name = EaseeDemo;
 			productName = EaseeDemo;
 			productReference = A92965012808A0B800556CED /* EaseeDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A948BA2E280F3AB000FCB7B6 /* WatchEaseeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A948BA57280F3AB100FCB7B6 /* Build configuration list for PBXNativeTarget "WatchEaseeDemo" */;
+			buildPhases = (
+				A948BA2D280F3AB000FCB7B6 /* Resources */,
+				A948BA53280F3AB100FCB7B6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A948BA3A280F3AB100FCB7B6 /* PBXTargetDependency */,
+			);
+			name = WatchEaseeDemo;
+			productName = WatchEaseeDemo;
+			productReference = A948BA2F280F3AB000FCB7B6 /* WatchEaseeDemo.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A948BA36280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A948BA56280F3AB100FCB7B6 /* Build configuration list for PBXNativeTarget "WatchEaseeDemo WatchKit Extension" */;
+			buildPhases = (
+				A948BA33280F3AB100FCB7B6 /* Sources */,
+				A948BA34280F3AB100FCB7B6 /* Frameworks */,
+				A948BA35280F3AB100FCB7B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchEaseeDemo WatchKit Extension";
+			productName = "WatchEaseeDemo WatchKit Extension";
+			productReference = A948BA37280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -105,6 +250,12 @@
 				TargetAttributes = {
 					A92965002808A0B800556CED = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					A948BA2E280F3AB000FCB7B6 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					A948BA36280F3AB100FCB7B6 = {
+						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
@@ -122,6 +273,8 @@
 			projectRoot = "";
 			targets = (
 				A92965002808A0B800556CED /* EaseeDemo */,
+				A948BA2E280F3AB000FCB7B6 /* WatchEaseeDemo */,
+				A948BA36280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -136,6 +289,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A948BA2D280F3AB000FCB7B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A948BA32280F3AB100FCB7B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A948BA35280F3AB100FCB7B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A948BA4A280F3AB100FCB7B6 /* Preview Assets.xcassets in Resources */,
+				A948BA70280F5AD300FCB7B6 /* Assets.xcassets in Resources */,
+				A948BA47280F3AB100FCB7B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -143,14 +314,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9687F50280F1E1100E3A3D4 /* MainView.swift in Sources */,
+				A948BA72280FE9E000FCB7B6 /* ProductCardPageView.swift in Sources */,
+				A9687F50280F1E1100E3A3D4 /* ContentView.swift in Sources */,
 				A9687F4E280F083F00E3A3D4 /* ProductCardView.swift in Sources */,
-				A92965072808A0B800556CED /* DashboardView.swift in Sources */,
+				A948BA6B280F521900FCB7B6 /* Model.swift in Sources */,
+				A92965072808A0B800556CED /* LocationView.swift in Sources */,
 				A92965052808A0B800556CED /* EaseeDemoApp.swift in Sources */,
+				A948BA6E280F5A5600FCB7B6 /* SupportingViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A948BA33280F3AB100FCB7B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A948BA6C280F587000FCB7B6 /* Model.swift in Sources */,
+				A948BA5D280F3E9C00FCB7B6 /* EaseeDemoApp.swift in Sources */,
+				A948BA69280F45ED00FCB7B6 /* LocationView.swift in Sources */,
+				A948BA67280F459900FCB7B6 /* ContentView.swift in Sources */,
+				A948BA6F280F5A5A00FCB7B6 /* SupportingViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A948BA3A280F3AB100FCB7B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A948BA36280F3AB100FCB7B6 /* WatchEaseeDemo WatchKit Extension */;
+			targetProxy = A948BA39280F3AB100FCB7B6 /* PBXContainerItemProxy */;
+		};
+		A948BA4E280F3AB100FCB7B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A948BA2E280F3AB000FCB7B6 /* WatchEaseeDemo */;
+			targetProxy = A948BA4D280F3AB100FCB7B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A929650D2808A0B900556CED /* Debug */ = {
@@ -325,6 +524,122 @@
 			};
 			name = Release;
 		};
+		A948BA51280F3AB100FCB7B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q24JJ6J4V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WatchEaseeDemo_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchEaseeDemo;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.marcowenzel.EaseeDemo;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.EaseeDemo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		A948BA52280F3AB100FCB7B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Q24JJ6J4V;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WatchEaseeDemo_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchEaseeDemo;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.marcowenzel.EaseeDemo;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.EaseeDemo.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		A948BA54280F3AB100FCB7B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchEaseeDemo WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 8Q24JJ6J4V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchEaseeDemo WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WatchEaseeDemo WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = WatchEaseeDemo_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.EaseeDemo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		A948BA55280F3AB100FCB7B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchEaseeDemo WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 8Q24JJ6J4V;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchEaseeDemo WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WatchEaseeDemo WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = WatchEaseeDemo_WatchKit_Extension.ComplicationController;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcowenzel.EaseeDemo.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -342,6 +657,24 @@
 			buildConfigurations = (
 				A92965102808A0B900556CED /* Debug */,
 				A92965112808A0B900556CED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A948BA56280F3AB100FCB7B6 /* Build configuration list for PBXNativeTarget "WatchEaseeDemo WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A948BA54280F3AB100FCB7B6 /* Debug */,
+				A948BA55280F3AB100FCB7B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A948BA57280F3AB100FCB7B6 /* Build configuration list for PBXNativeTarget "WatchEaseeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A948BA51280F3AB100FCB7B6 /* Debug */,
+				A948BA52280F3AB100FCB7B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
