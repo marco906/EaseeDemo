@@ -13,18 +13,17 @@ struct LocationView: View {
     var body: some View {
         #if os(watchOS)
         // watch
-        ProductCardPageView(location: location)
+        ProductCardPageView(location: location, offset: .constant(0))
             .navigationTitle(location.name)
         #else
         Group {
             if horizontalSizeClass == .compact {
-                // iphone and ipad compact
+                // MARK: iPhone and ipad compact
                 ZStack {
                     LocationDetailView()
-                    ProductCardPageView(location: location)
+                    ProductCardPageView(location: location, offset: $offset)
                         .offset(x: 0, y: offset)
                 }
-                .background(Color(uiColor: .secondarySystemGroupedBackground))
                 .navigationBarTitleDisplayMode(.inline)
                 // toolbar
                 .toolbar{
@@ -33,11 +32,11 @@ struct LocationView: View {
                     }
                 }
             } else {
-                // ipad landscape, macOS
+                // MARK: iPad landscape, macOS
                 HStack {
                     LocationDetailView()
                     Spacer()
-                    ProductCardPageView(location: location)
+                    ProductCardPageView(location: location, offset: $offset)
                         .padding(.vertical)
                         .padding(.trailing)
                         .frame(minWidth: 400)

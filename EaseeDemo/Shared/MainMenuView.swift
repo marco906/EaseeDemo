@@ -7,15 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainMenuView: View {
     @EnvironmentObject var model: Model
     @State var selection: String? = "Home"
     var body: some View {
         NavigationView {
             List {
-                #if os(iOS)
-                profileHeader
-                #endif
                 listContent
             }
             .navigationTitle("easee")
@@ -29,6 +26,9 @@ struct ContentView: View {
     
     // MARK: - List content
     @ViewBuilder var listContent: some View {
+        #if os(iOS)
+        profileHeader
+        #endif
         Group{
             Section("Locations") {
                 ForEach(model.locations) { location in
@@ -107,7 +107,7 @@ struct ContentView: View {
 // MARK: - Preview
 struct Sidebarview_Previews: PreviewProvider {
     static var previews: some View {
-            ContentView()
+            MainMenuView()
             .preferredColorScheme(.dark)
     }
 }

@@ -55,10 +55,15 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "32">
+<<<<<<< HEAD
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
          RemotePath = "/WatchEaseeDemo">
+=======
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+>>>>>>> c06dcc50ce182ec4dbf97109cc85864c278a7008
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A948BA2E280F3AB000FCB7B6"
@@ -66,7 +71,11 @@
             BlueprintName = "WatchEaseeDemo"
             ReferencedContainer = "container:EaseeDemo.xcodeproj">
          </BuildableReference>
+<<<<<<< HEAD
       </RemoteRunnable>
+=======
+      </BuildableProductRunnable>
+>>>>>>> c06dcc50ce182ec4dbf97109cc85864c278a7008
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,10 +84,15 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "32">
+<<<<<<< HEAD
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
          RemotePath = "/WatchEaseeDemo">
+=======
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+>>>>>>> c06dcc50ce182ec4dbf97109cc85864c278a7008
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A948BA2E280F3AB000FCB7B6"
@@ -86,6 +100,7 @@
             BlueprintName = "WatchEaseeDemo"
             ReferencedContainer = "container:EaseeDemo.xcodeproj">
          </BuildableReference>
+<<<<<<< HEAD
       </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
@@ -96,6 +111,9 @@
             ReferencedContainer = "container:EaseeDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+=======
+      </BuildableProductRunnable>
+>>>>>>> c06dcc50ce182ec4dbf97109cc85864c278a7008
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

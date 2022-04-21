@@ -10,31 +10,31 @@ import SwiftUI
 struct ProductCardPageView: View {
     @State var location: ChargeLocation
     @State var currentRobot = 0
+    @Binding var offset: CGFloat
 
     var body: some View {
         #if os(watchOS)
         pageView
         
         #else
-        VStack(spacing: 8) {
-            headerView
-            
-            pageView
-            .frame(height: 500)
-            
-            optionButtons
-            Spacer()
-            
-        }
-        .background(
-            RoundedRectangle(cornerRadius: 32)
-                .edgesIgnoringSafeArea(.bottom)
-                .foregroundColor(Color(uiColor: .systemGroupedBackground))
-        )
+            VStack(spacing: 8) {
+                headerView
+                
+                ScrollView(.vertical, showsIndicators: false){
+                    VStack{
+                        pageView
+                            .frame(height: 500)
+                        optionButtons
+                    }
+                    .padding(.bottom)
+                }
+            }
+            .background(cardBackground)
         #endif
         
     }
     
+    // MARK: Subviews
     var pageView: some View{
         TabView(selection: $currentRobot) {
             ForEach(location.robots) { robot in
@@ -66,6 +66,19 @@ struct ProductCardPageView: View {
         .padding(.vertical, 8)
         .padding(.top)
         .padding(.horizontal)
+        .background(Color(uiColor: .systemGroupedBackground))
+        .cornerRadius(32)
+        .onTapGesture {
+            withAnimation(.spring()) {
+                offset = 0
+            }
+        }
+    }
+    
+    var cardBackground: some View {
+        RoundedRectangle(cornerRadius: 32)
+            .edgesIgnoringSafeArea(.bottom)
+            .foregroundColor(Color(uiColor: .systemGroupedBackground))
     }
     
     @ViewBuilder var optionButtons: some View {
@@ -90,9 +103,10 @@ struct ProductCardPageView: View {
 }
 
 struct ProductCardPageView_Previews: PreviewProvider {
+    @State static var offset = CGFloat.zero
     static var previews: some View {
         NavigationView {
-        ProductCardPageView(location: .preview)
+        ProductCardPageView(location: .preview, offset: $offset)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Home")
                 

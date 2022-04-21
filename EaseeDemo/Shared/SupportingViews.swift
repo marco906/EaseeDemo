@@ -19,7 +19,7 @@ struct FeatureView: View {
                     .frame(width: 25)
                 VStack(alignment: .leading) {
                     Text(title)
-                        .font(.headline)
+                        .font(.subheadline)
                     if subTitle.isEmpty == false {
                     Text(subTitle)
                         .font(.footnote)
@@ -30,7 +30,7 @@ struct FeatureView: View {
             } else {
                 VStack(alignment: .trailing) {
                     Text(title)
-                        .font(.headline)
+                        .font(.subheadline)
                     if subTitle.isEmpty == false {
                     Text(subTitle)
                         .font(.footnote)
