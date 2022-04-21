@@ -13,7 +13,7 @@ struct LocationView: View {
     var body: some View {
         #if os(watchOS)
         // watch
-        ProductCardPageView(location: location)
+        ProductCardPageView(location: location, offset: .constant(0))
             .navigationTitle(location.name)
         #else
         Group {
@@ -21,10 +21,10 @@ struct LocationView: View {
                 // iphone and ipad compact
                 ZStack {
                     LocationDetailView()
-                    ProductCardPageView(location: location)
+                    ProductCardPageView(location: location, offset: $offset)
                         .offset(x: 0, y: offset)
                 }
-                .background(Color(uiColor: .secondarySystemGroupedBackground))
+                //.background(Color(uiColor: .secondarySystemGroupedBackground))
                 .navigationBarTitleDisplayMode(.inline)
                 // toolbar
                 .toolbar{
@@ -37,7 +37,7 @@ struct LocationView: View {
                 HStack {
                     LocationDetailView()
                     Spacer()
-                    ProductCardPageView(location: location)
+                    ProductCardPageView(location: location, offset: $offset)
                         .padding(.vertical)
                         .padding(.trailing)
                         .frame(minWidth: 400)

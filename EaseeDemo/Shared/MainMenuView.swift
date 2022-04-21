@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainMenuView: View {
     @EnvironmentObject var model: Model
     @State var selection: String? = "Home"
     var body: some View {
@@ -107,7 +107,7 @@ struct ContentView: View {
 // MARK: - Preview
 struct Sidebarview_Previews: PreviewProvider {
     static var previews: some View {
-            ContentView()
+            MainMenuView()
             .preferredColorScheme(.dark)
     }
 }

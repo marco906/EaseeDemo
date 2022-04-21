@@ -41,8 +41,8 @@ extension ChargeLocation {
         return ChargeLocation(name: "Home", robots: [robot1, robot2])
     }
     static func createPreviewContent() -> [ChargeLocation] {
-        let robot1 = ChargeRobot(name: "Garage 1")
-        let robot2 = ChargeRobot(name: "Garage 2", color: "blue")
+        let robot1 = ChargeRobot(name: "Garage 1", color: "blue")
+        let robot2 = ChargeRobot(name: "Garage 2", color: "white")
         let robot3 = ChargeRobot(name: "Carport", color: "red")
         let location1 = ChargeLocation(name: "Home", robots: [robot1, robot2])
         let location2 = ChargeLocation(name: "Cabin", robots: [robot3])
