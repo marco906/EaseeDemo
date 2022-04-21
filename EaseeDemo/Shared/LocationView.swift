@@ -18,13 +18,12 @@ struct LocationView: View {
         #else
         Group {
             if horizontalSizeClass == .compact {
-                // iphone and ipad compact
+                // MARK: iPhone and ipad compact
                 ZStack {
                     LocationDetailView()
                     ProductCardPageView(location: location, offset: $offset)
                         .offset(x: 0, y: offset)
                 }
-                //.background(Color(uiColor: .secondarySystemGroupedBackground))
                 .navigationBarTitleDisplayMode(.inline)
                 // toolbar
                 .toolbar{
@@ -33,7 +32,7 @@ struct LocationView: View {
                     }
                 }
             } else {
-                // ipad landscape, macOS
+                // MARK: iPad landscape, macOS
                 HStack {
                     LocationDetailView()
                     Spacer()

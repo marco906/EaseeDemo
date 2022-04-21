@@ -34,6 +34,7 @@ struct ProductCardPageView: View {
         
     }
     
+    // MARK: Subviews
     var pageView: some View{
         TabView(selection: $currentRobot) {
             ForEach(location.robots) { robot in

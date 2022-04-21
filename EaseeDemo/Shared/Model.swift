@@ -52,6 +52,6 @@ extension ChargeLocation {
 
 extension ChargeRobot {
     static var preview: ChargeRobot {
-        ChargeRobot(name: "Carport")
+        ChargeRobot(name: "Carport", color: "blue")
     }
 }

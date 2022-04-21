@@ -13,9 +13,6 @@ struct MainMenuView: View {
     var body: some View {
         NavigationView {
             List {
-                #if os(iOS)
-                profileHeader
-                #endif
                 listContent
             }
             .navigationTitle("easee")
@@ -29,6 +26,9 @@ struct MainMenuView: View {
     
     // MARK: - List content
     @ViewBuilder var listContent: some View {
+        #if os(iOS)
+        profileHeader
+        #endif
         Group{
             Section("Locations") {
                 ForEach(model.locations) { location in
