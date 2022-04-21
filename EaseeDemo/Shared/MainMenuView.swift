@@ -108,6 +108,7 @@ struct MainMenuView: View {
 struct Sidebarview_Previews: PreviewProvider {
     static var previews: some View {
             MainMenuView()
+            .environmentObject(Model())
             .preferredColorScheme(.dark)
     }
 }
