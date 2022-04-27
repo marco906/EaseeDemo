@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct LocationView: View {
-    @State var location: ChargeLocation
+struct SiteView: View {
+    @State var site: ChargeSite
     
     var body: some View {
         #if os(watchOS)
         // watch
-        ProductCardPageView(location: location, offset: .constant(0))
-            .navigationTitle(location.name)
+        ProductCardPageView(site: site, offset: .constant(0))
+            .navigationTitle(site.name)
         #else
         Group {
             if horizontalSizeClass == .compact {
                 // MARK: iPhone and ipad compact
                 ZStack {
-                    LocationDetailView()
-                    ProductCardPageView(location: location, offset: $offset)
+                    SiteDetailView()
+                    ProductCardPageView(site: site, offset: $offset)
                         .offset(x: 0, y: offset)
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -34,9 +34,9 @@ struct LocationView: View {
             } else {
                 // MARK: iPad landscape, macOS
                 HStack {
-                    LocationDetailView()
+                    SiteDetailView()
                     Spacer()
-                    ProductCardPageView(location: location, offset: $offset)
+                    ProductCardPageView(site: site, offset: $offset)
                         .padding(.vertical)
                         .padding(.trailing)
                         .frame(minWidth: 400)
@@ -46,7 +46,7 @@ struct LocationView: View {
         }
         .foregroundColor(.primary)
         .background(Color(uiColor: .secondarySystemGroupedBackground))
-        .navigationTitle(location.name)
+        .navigationTitle(site.name)
         #endif
         
     }
@@ -55,7 +55,7 @@ struct LocationView: View {
     #if os(iOS)
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State var offset = CGFloat.zero
-    var maxOffset: CGFloat = 380
+    var maxOffset: CGFloat = 370
     var maxRotation: CGFloat = 180
     
     var productCardButton: some View {
@@ -74,13 +74,13 @@ struct LocationView: View {
 struct DashboardView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LocationView(location: .preview)
+            SiteView(site: .preview)
         }
         .environmentObject(Model())
         .preferredColorScheme(.dark)
         
         NavigationView {
-        LocationView(location: .preview)
+        SiteView(site: .preview)
         }
         .environmentObject(Model())
         .preferredColorScheme(.light)

@@ -30,12 +30,12 @@ struct MainMenuView: View {
         profileHeader
         #endif
         Group{
-            Section("Locations") {
-                ForEach(model.locations) { location in
-                    NavigationLink(tag: location.name, selection: $selection){
-                        LocationView(location: location)
+            Section("Charging Sites") {
+                ForEach(model.sites) { site in
+                    NavigationLink(tag: site.name, selection: $selection){
+                        SiteView(site: site)
                     } label: {
-                        Label(location.name, systemImage: "bolt.car")
+                        Label(site.name, systemImage: "bolt.car")
                     }
                 }
             }

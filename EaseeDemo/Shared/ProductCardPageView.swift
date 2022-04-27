@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductCardPageView: View {
-    @State var location: ChargeLocation
+    @State var site: ChargeSite
     @State var currentRobot = 0
     @Binding var offset: CGFloat
 
@@ -37,9 +37,9 @@ struct ProductCardPageView: View {
     // MARK: Subviews
     var pageView: some View{
         TabView(selection: $currentRobot) {
-            ForEach(location.robots) { robot in
+            ForEach(site.robots) { robot in
                 ProductCardView(robot: robot)
-                    .tag(location.robots.firstIndex(where: { $0.id == robot.id }) ?? 0)
+                    .tag(site.robots.firstIndex(where: { $0.id == robot.id }) ?? 0)
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .always))
@@ -55,7 +55,7 @@ struct ProductCardPageView: View {
             }
             .frame(width: 80, alignment: .leading)
             Spacer()
-            Text("\(currentRobot + 1)/\(location.robots.count)")
+            Text("\(currentRobot + 1)/\(site.robots.count)")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             Spacer()
@@ -106,7 +106,7 @@ struct ProductCardPageView_Previews: PreviewProvider {
     @State static var offset = CGFloat.zero
     static var previews: some View {
         NavigationView {
-        ProductCardPageView(location: .preview, offset: $offset)
+        ProductCardPageView(site: .preview, offset: $offset)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("Home")
                 

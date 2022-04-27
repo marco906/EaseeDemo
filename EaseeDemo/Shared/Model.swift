@@ -7,19 +7,19 @@
 
 import Foundation
 class Model: ObservableObject {
-    static var preview = Model(locations: ChargeLocation.createPreviewContent())
-    @Published var locations: [ChargeLocation]
+    static var preview = Model(sites: ChargeSite.createPreviewContent())
+    @Published var sites: [ChargeSite]
     @Published var notifChargeStarted = true
     @Published var notifChargeEnded = true
     @Published var notifChargeInter = true
     @Published var notifAuthForgotten = true
     
-    init(locations: [ChargeLocation] = []) {
-        self.locations = locations
+    init(sites: [ChargeSite] = []) {
+        self.sites = sites
     }
 }
 
-struct ChargeLocation: Identifiable {
+struct ChargeSite: Identifiable {
     var id = UUID()
     var name: String
     var robots: [ChargeRobot] = []
@@ -34,18 +34,18 @@ struct ChargeRobot: Identifiable {
     var isAccessLocked = false
 }
 
-extension ChargeLocation {
-    static var preview: ChargeLocation {
-        let robot1 = ChargeRobot(name: "Garage 1")
-        let robot2 = ChargeRobot(name: "Garage 2", color: "red")
-        return ChargeLocation(name: "Home", robots: [robot1, robot2])
+extension ChargeSite {
+    static var preview: ChargeSite {
+        let robot1 = ChargeRobot(name: "Garage 1", color: "blue")
+        let robot2 = ChargeRobot(name: "Garage 2", color: "white")
+        return ChargeSite(name: "Home", robots: [robot1, robot2])
     }
-    static func createPreviewContent() -> [ChargeLocation] {
+    static func createPreviewContent() -> [ChargeSite] {
         let robot1 = ChargeRobot(name: "Garage 1", color: "blue")
         let robot2 = ChargeRobot(name: "Garage 2", color: "white")
         let robot3 = ChargeRobot(name: "Carport", color: "red")
-        let location1 = ChargeLocation(name: "Home", robots: [robot1, robot2])
-        let location2 = ChargeLocation(name: "Cabin", robots: [robot3])
+        let location1 = ChargeSite(name: "Home", robots: [robot1, robot2])
+        let location2 = ChargeSite(name: "Cabin", robots: [robot3])
         return [location1, location2]
     }
 }

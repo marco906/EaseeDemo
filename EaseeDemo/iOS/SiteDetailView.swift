@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LocationDetailView: View {
+struct SiteDetailView: View {
     @State var selection = 2
     var body: some View {
         VStack{
@@ -65,9 +65,9 @@ struct LocationDetailView: View {
         }
         
         NavigationLink{
-            Text("Location settings")
+            Text("Site settings")
         } label: {
-            NavButton(title: "Location settings")
+            NavButton(title: "Site settings")
         }
         }
         .font(.subheadline)
@@ -78,7 +78,7 @@ struct LocationDetailView: View {
 
 struct LocationDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationDetailView()
+        SiteDetailView()
             .background(Color(uiColor: .secondarySystemGroupedBackground))
             .preferredColorScheme(.dark)
     }
