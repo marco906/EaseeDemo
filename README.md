@@ -1,6 +1,6 @@
 # EaseeDemo SwiftUI
 
-This is a UI demo project for a EV charger app written in Swift/SwiftUI. Supports iOS, iPad and Apple Watch.
+This is an UI demo project for an EV charger app written in Swift/SwiftUI. Supports iOS, iPadOS and Apple Watch.
 
 <img width="1202" alt="EV charger app demp iOS" src="https://github.com/marco906/EaseeDemo/assets/50551133/0f66c490-76e2-4e1c-9f48-40a942988473">
 
